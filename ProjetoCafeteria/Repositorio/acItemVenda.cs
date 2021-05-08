@@ -7,6 +7,5 @@ namespace ProjetoCafeteria.Repositorio
 {
     public class acItemVenda
     {
-
     }
 }

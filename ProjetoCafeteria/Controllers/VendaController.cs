@@ -9,7 +9,7 @@ namespace ProjetoCafeteria.Controllers
     public class VendaController : Controller
     {
         // GET: Venda
-        public ActionResult Index()
+        public ActionResult Pedido()
         {
             return View();
         }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetoCafeteria.Models
 {
-    public class Produto
+    public class Pedido
     {
     }
 }

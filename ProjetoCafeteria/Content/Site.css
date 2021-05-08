@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn{
+    margin-bottom: 10px;
+}
+
+.actionButton{
+    color: #fff;
+}

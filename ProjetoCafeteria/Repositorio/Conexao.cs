@@ -25,7 +25,7 @@ namespace ProjetoCafeteria.Repositorio
             return cn;
         }
 
-        public MySqlConnection fecharConexa()
+        public MySqlConnection fecharConexao()
         {
             try
             {

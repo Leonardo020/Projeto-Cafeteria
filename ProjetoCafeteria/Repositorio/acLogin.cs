@@ -14,7 +14,7 @@ namespace ProjetoCafeteria.Repositorio
         public void validaLogin(Login login)
         {
 
-            MySqlCommand cmd = new MySqlCommand("select * from tbLogin where email_login = @email and senha_login = @senha", cn.abrirConexao());
+            MySqlCommand cmd = new MySqlCommand("select * from Login where email_login = @email and senha_login = @senha", cn.abrirConexao());
             cmd.Parameters.AddWithValue("@email", login.emailLogin);
             cmd.Parameters.AddWithValue("@senha", login.senhaLogin);
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -23,23 +23,21 @@ namespace ProjetoCafeteria.Repositorio
             {
                 while (dr.Read())
                 {
-                    login.nomeLogin = dr["nomeLogin"].ToString();
-                    login.emailLogin = dr["emailLogin"].ToString();
-                    login.senhaLogin = dr["senhaLogin"].ToString();
-                    login.nivelLogin = Convert.ToInt32(dr["nivelLogin"]);
+                    login.nomeLogin = dr["nome_login"].ToString();
+                    login.emailLogin = dr["email_login"].ToString();
+                    login.senhaLogin = dr["senha_login"].ToString();
+                    login.nivelLogin = Convert.ToInt32(dr["nivel_login"]);
                 }
             }
 
             else{
-                login.nomeUsuario = null;
-                login.emailUsuario = null;
-                login.senhaUsuario = null;
+                login.nomeLogin = null;
+                login.emailLogin = null;
+                login.senhaLogin = null;
                 login.nivelLogin = Convert.ToInt32(null);
             }
 
-
-
-
+            cn.fecharConexao();
         }
     }
 }

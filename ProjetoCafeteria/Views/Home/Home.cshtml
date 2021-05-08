@@ -1,18 +1,75 @@
-﻿
+﻿@model IEnumerable<ProjetoCafeteria.Models.Produto>
 @{
     ViewBag.Title = "Home";
 }
 
 <center>
     <h2>Home</h2>
+
     <div class="row">
-       <button class="btn btn-success">Cadastrar</button>
-    </div> 
-    <div class="row">
-       <button class="btn btn-primary">Atualizar</button>
-    </div> 
-    <div class="row">
-       <button class="btn btn-danger">Deletar</button>
+        <button class="btn btn-success">@Html.ActionLink("Cadastro", "cadProduto", "Produto", null, new { @class = "actionButton" })</button>
     </div>
+    <div class="row">
+        <button class="btn btn-primary">@Html.ActionLink("Atualizar", "atualizaProduto", "Produto", null, new { @class = "actionButton" })</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-danger">@Html.ActionLink("Excluir", "excluiProduto", "Produto", null, new { @class = "actionButton" })</button>
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtdProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.codFornecedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeFornecedor)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qtdProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valorProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codFornecedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeFornecedor)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+
 </center>
 
