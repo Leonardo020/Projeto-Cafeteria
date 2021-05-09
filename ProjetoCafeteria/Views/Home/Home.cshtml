@@ -3,19 +3,12 @@
     ViewBag.Title = "Home";
 }
 
+<h2>Home</h2>
+
+<div class="row col-md-4">
+    <button class="btn btn-success"><i class="fas fa-plus"></i> @Html.ActionLink("Cadastro", "cadProduto", "Produto", null, new { @class = "actionButton" })</button>
+</div>
 <center>
-    <h2>Home</h2>
-
-    <div class="row">
-        <button class="btn btn-success">@Html.ActionLink("Cadastro", "cadProduto", "Produto", null, new { @class = "actionButton" })</button>
-    </div>
-    <div class="row">
-        <button class="btn btn-primary">@Html.ActionLink("Atualizar", "atualizaProduto", "Produto", null, new { @class = "actionButton" })</button>
-    </div>
-    <div class="row">
-        <button class="btn btn-danger">@Html.ActionLink("Excluir", "excluiProduto", "Produto", null, new { @class = "actionButton" })</button>
-    </div>
-
 
     <table class="table">
         <tr>
@@ -30,9 +23,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.valorProduto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.codFornecedor)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.nomeFornecedor)
@@ -56,15 +46,12 @@
                     @Html.DisplayFor(modelItem => item.valorProduto)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.codFornecedor)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.nomeFornecedor)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Adicionar ao carrinho", "adicionarPedido", "Venda", new { id = item.codProduto }, null) |
+                    @Html.ActionLink("Atualizar", "", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>
             </tr>
         }

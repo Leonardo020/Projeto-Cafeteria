@@ -103,8 +103,8 @@ C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\bin\pt-br\System.W
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.csprojAssemblyReference.cache
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.csproj.CoreCompileInputs.cache
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.csproj.CopyComplete
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.dll
 C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.pdb
+C:\Users\leona\source\repos\ProjetoCafeteria\ProjetoCafeteria\obj\Debug\ProjetoCafeteria.csprojAssemblyReference.cache

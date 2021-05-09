@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -17,13 +18,51 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="~/Home/Home"><img class="img-responsive" width="100" height="80" src="~/img/centralperk.png"/></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Início", "Home", "Home", new {@class = "navBarAction"})</li>
+                    <li class="dropdown">
+                        <a class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Funcionário <span class="fas fa-chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-divider">
+                                <a class="dropdown-item">  @Html.ActionLink("Cadastro", "cadFunc", "Funcionario", null, new { @class = "dropdownLink" })</a>
+                            </div>
+                            <div class="dropdown-divider">
+                                <a class="dropdown-item"> @Html.ActionLink("Consulta", "consultaFunc", "Funcionario", null, new { @class = "dropdownLink" })</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cliente <span class="fas fa-chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-divider">
+                                <a class="dropdown-item"> @Html.ActionLink("Cadastro", "cadCliente", "Cliente", null, new { @class = "dropdownLink" })</a>
+                            </div>
+                            <div class="dropdown-divider">
+                                <a class="dropdown-item"> @Html.ActionLink("Consulta", "consultaCliente", "Cliente", null, new { @class = "dropdownLink" })</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="~/Venda/Pedidos" title="Ir para o carrinho" id="header-cart">
+                            @if (Session["qtdCarrinho"] != null)
+                            {
+                                <div class="header-bullet" id="circulo">@Session["qtdCarrinho"].ToString()</div>
+                            }
+
+                            else
+                            {
+                                <div class="header-bullet" id="circulo">0</div>
+                            }
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
