@@ -50,8 +50,8 @@
                 </td>
                 <td>
                     @Html.ActionLink("Adicionar ao carrinho", "adicionarPedido", "Venda", new { id = item.codProduto }, null) |
-                    @Html.ActionLink("Atualizar", "", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Atualizar", "atualizaProduto", "Produto", new {  id=item.codProduto  }, null) |
+                    @Html.ActionLink("Excluir", "excluiProduto", "Produto", new {  id=item.codProduto  }, null)
                 </td>
             </tr>
         }

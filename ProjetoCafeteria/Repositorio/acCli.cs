@@ -12,10 +12,10 @@ namespace ProjetoCafeteria.Repositorio
         Conexao cn = new Conexao();
         public void cadastraCliente(Cliente cli)
         {
-            MySqlCommand cmd = new MySqlCommand("call inserirCliente(@nome, @email, @cpf)", cn.abrirConexao());
+            MySqlCommand cmd = new MySqlCommand("call inserirCliente(@nome, @cpf, @email)", cn.abrirConexao());
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cli.nomeCliente;
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cli.emailCliente;
-            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cli.cpfCliente;
+            cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = cli.cpfCliente;
 
             cmd.ExecuteNonQuery();
 

@@ -8,7 +8,7 @@ namespace ProjetoCafeteria.Repositorio
 {
     public class Conexao
     {
-        MySqlConnection cn = new MySqlConnection("server=localhost ;user=root; database=dbCafeteria;password=0431723748");
+        MySqlConnection cn = new MySqlConnection("server=localhost ;user=root; database=dbCafeteria;password=cleber123");
 
         public MySqlConnection abrirConexao()
         {

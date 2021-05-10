@@ -12,7 +12,7 @@ namespace ProjetoCafeteria.Controllers
     public class ProdutoController : Controller
     {
         Conexao cn = new Conexao();
-        List<SelectListItem> fornecedores = new List<SelectListItem>(); 
+        List<SelectListItem> fornecedores = new List<SelectListItem>();
         acProduto acP = new acProduto();
 
         void carregarFornecedores()
@@ -44,6 +44,7 @@ namespace ProjetoCafeteria.Controllers
         [HttpPost]
         public ActionResult cadProduto(Produto prod)
         {
+            ViewBag.sucesso = "Cadastro realizado com sucesso!!";
             carregarFornecedores();
             prod.codFornecedor = Convert.ToInt32(Request["fornecedores"]);
             acP.cadastraProduto(prod);
@@ -56,16 +57,32 @@ namespace ProjetoCafeteria.Controllers
         }
 
         [HttpPost]
+
         public ActionResult atualizaProduto(Produto prod)
         {
-            acP.atualizaProduto(prod);
-            return View();
+            ViewBag.sucesso = "Produto atualizado com sucesso!!";
+            if (Session["nivel1"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                acP.atualizaProduto(prod);
+                return View();
+            }
         }
 
         public ActionResult excluiProduto(int Id)
         {
-            acP.excluiProduto(Id);
-            return View();
+            if (Session["nivel1"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                acP.excluiProduto(Id);
+                return View();
+            }
         }
 
     }

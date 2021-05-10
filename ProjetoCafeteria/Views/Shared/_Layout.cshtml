@@ -51,15 +51,7 @@
                     </li>
                     <li>
                         <a href="~/Venda/Pedidos" title="Ir para o carrinho" id="header-cart">
-                            @if (Session["qtdCarrinho"] != null)
-                            {
-                                <div class="header-bullet" id="circulo">@Session["qtdCarrinho"].ToString()</div>
-                            }
 
-                            else
-                            {
-                                <div class="header-bullet" id="circulo">0</div>
-                            }
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>

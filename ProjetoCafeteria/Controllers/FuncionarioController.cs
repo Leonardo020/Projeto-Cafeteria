@@ -18,6 +18,7 @@ namespace ProjetoCafeteria.Controllers
         [HttpPost]
         public ActionResult cadFunc(Funcionario func)
         {
+            ViewBag.sucesso = "Cadastro realizado com sucesso!!";
             acF.cadastraFunc(func);
             return View();
         }

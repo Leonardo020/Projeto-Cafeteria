@@ -20,14 +20,22 @@ namespace ProjetoCafeteria.Controllers
         [HttpPost]
         public ActionResult cadCliente(Cliente cli)
         {
+            ViewBag.sucesso = "Cadastro realizado com sucesso!!";
             acC.cadastraCliente(cli);
             return View();
         }
 
         public ActionResult consultaCliente()
         {
-            var clientes = acC.consultaCliente();
-            return View(clientes);
+            if ((Session["email"] == null) || (Session["senha"] == null))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                var clientes = acC.consultaCliente();
+                return View(clientes);
+            }
         }
     }
 }

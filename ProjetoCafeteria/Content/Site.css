@@ -67,16 +67,4 @@ textarea {
         color: #fff;
     }
 
-.header-bullet {
-    height: 1.4rem;
-    width: 1.4rem;
-    position: absolute;
-    background-color: #3bcd39;
-    border-radius: 100%;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.0rem;
-    text-align: center;
-    line-height: 15px;
-    margin-left: 33%;
-}
+
