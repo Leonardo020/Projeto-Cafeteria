@@ -5,6 +5,10 @@
     "\\ProjetoCafeteria\\Views",
     "\\ProjetoCafeteria\\Views\\Produto"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\ProjetoCafeteria.sln",
+=======
+  "SelectedNode": "\\ProjetoCafeteria\\Views\\Produto\\cadProduto.cshtml",
+>>>>>>> bbf491f5e7da1edf0b782dd1585a07ca1d27b104
   "PreviewInSolutionExplorer": false
 }
