@@ -167,7 +167,11 @@ namespace ProjetoCafeteria.Controllers
 
             }
 
+        }
 
+        public ActionResult confVenda()
+        {
+            return View();
         }
     }
 }

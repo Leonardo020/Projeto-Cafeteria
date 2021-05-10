@@ -9,6 +9,7 @@ namespace ProjetoCafeteria.Models
     public class Venda
     {
         public int codVenda { get; set; }
+        [DisplayFormat(DataFormatString ="{0}:dd/M/yyyy")]
         public DateTime dataVenda { get; set; }
         [Display(Name = "Quantidade venda")]
         public int qtdVenda { get; set; }

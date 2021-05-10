@@ -278,6 +278,7 @@
     <Content Include="Views\Cliente\consultaCliente.cshtml" />
     <Content Include="Views\Funcionario\consultaFunc.cshtml" />
     <Content Include="Views\Venda\Pedidos.cshtml" />
+    <Content Include="Views\Venda\confVenda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

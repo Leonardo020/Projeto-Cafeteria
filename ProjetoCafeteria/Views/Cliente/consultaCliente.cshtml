@@ -6,9 +6,9 @@
 
 <h2>consultaCliente</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="row col-md-4">
+    <button class="btn btn-success"><i class="fas fa-plus"></i> @Html.ActionLink("Cadastro", "cadCliente", "Cliente", null, new { @class = "actionButton" })</button>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -20,7 +20,6 @@
         <th>
             @Html.DisplayNameFor(model => model.emailCliente)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -33,11 +32,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.emailCliente)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

@@ -62,6 +62,12 @@ namespace ProjetoCafeteria.Controllers
             return View();
         }
 
+        public ActionResult excluiProduto()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult excluiProduto(int Id)
         {
             acP.excluiProduto(Id);
