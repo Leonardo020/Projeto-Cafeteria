@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjetoCafeteria.Models.Produto>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<div class="row col-md-4">
+    <button class="btn btn-success"><i class="fas fa-plus"></i> @Html.ActionLink("Cadastro", "cadProduto", "Produto", null, new { @class = "actionButton" })</button>
+</div>
+<center>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtdProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valorProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeFornecedor)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qtdProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.valorProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeFornecedor)
+                </td>
+                <td>
+                    @Html.ActionLink("Adicionar ao carrinho", "adicionarPedido", "Venda", new { id = item.codProduto }, null) |
+                    @Html.ActionLink("Atualizar", "", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</center>
+

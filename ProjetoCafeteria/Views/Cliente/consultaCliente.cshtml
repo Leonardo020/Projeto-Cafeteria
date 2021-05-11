@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjetoCafeteria.Models.Cliente>
+
+@{
+    ViewBag.Title = "consultaCliente";
+}
+
+<h2>consultaCliente</h2>
+
+<div class="row col-md-4">
+    <button class="btn btn-success"><i class="fas fa-plus"></i> @Html.ActionLink("Cadastro", "cadCliente", "Cliente", null, new { @class = "actionButton" })</button>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailCliente)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailCliente)
+        </td>
+    </tr>
+}
+
+</table>

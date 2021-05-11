@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjetoCafeteria.Models.Funcionario>
+
+@{
+    ViewBag.Title = "consultaFunc";
+}
+
+<h2>Consulta de Funcionários</h2>
+
+
+<div class="row col-md-4">
+    <button class="btn btn-success"><i class="fas fa-plus"></i> @Html.ActionLink("Cadastro", "cadFunc", "Funcionario", null, new { @class = "actionButton" })</button>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpfFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senhaFunc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpfFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.senhaFunc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

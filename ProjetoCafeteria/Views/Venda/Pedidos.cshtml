@@ -1,0 +1,72 @@
+﻿@model ProjetoCafeteria.Models.Venda
+
+@{
+    ViewBag.Title = "Venda";
+}
+
+<h2>Carrinho</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qtdVenda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorParcial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorTotal)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.itemPedido)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.produto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtdItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorProd)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.valorPedido)
+            </td>
+            <td>
+                @using (Html.BeginForm("ExcluirItem", "Venda", FormMethod.Post))
+                {
+                    <input type="hidden" name="id" value=@item.codItemPedido>
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p> @Html.DisplayFor(model => model.valorTotal)</p>
+
+@using (Html.BeginForm("SalvarVenda", "Venda", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.codCli, htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownList("clientes", null, "Selecione o cliente", new { @class = "form-control" })
+    </div> 
+    <div class="form-group">
+        @Html.LabelFor(model => model.codPagamento, htmlAttributes: new { @class = "control-label" })
+        @Html.DropDownList("pagamentos", null, "Selecione o pagamento", new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Finalizar Compra</button>
+}
+<br />
+@Html.ActionLink("Voltar à lista", "Home", "Home")
+
+
+

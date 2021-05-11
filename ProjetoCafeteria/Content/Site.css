@@ -1,0 +1,82 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btn{
+    margin-bottom: 10px;
+}
+
+.actionButton{
+    color: #fff;
+}
+
+/*item de navbar*/
+.navbar-nav{
+    margin-top: 8px;
+}
+
+.dropdown-menu {
+    background-color: #000;
+}
+
+
+.dropdown-item {
+    margin-left: 5px;
+}
+
+.dropdown-divider:nth-child(2) {
+    border-top: 1px solid #fff;
+}
+
+.dropdown-divider:nth-child(1):hover {
+    background-color: #2a2828;
+}
+
+.dropdown-divider:nth-child(2):hover {
+    background-color: #2a2828;
+}
+
+.dropdownLink {
+    text-decoration: none;
+    color: #fff;
+}
+
+    .dropdownLink:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+
+.header-bullet {
+    height: 1.4rem;
+    width: 1.4rem;
+    position: absolute;
+    background-color: #3bcd39;
+    border-radius: 100%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.0rem;
+    text-align: center;
+    line-height: 15px;
+    margin-left: 33%;
+}
